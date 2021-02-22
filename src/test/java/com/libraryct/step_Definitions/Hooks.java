@@ -11,7 +11,7 @@ public class Hooks {
 
     Login login = new Login();
 
-    @Before(order = 2)
+    @Before(order = 1)
     public void setUpScenario(){
         login.getEnvironment("qa1");
     }
