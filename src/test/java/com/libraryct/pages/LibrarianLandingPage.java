@@ -7,21 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class StudentLandingPage {
+public class LibrarianLandingPage {
 
-
-    public StudentLandingPage() {
+    public LibrarianLandingPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-
     @FindBy(xpath = "//span[@class='title']")
-    public List<WebElement> studentsModules;
-
-
-    public static void getCurrentUrl() {
-        Driver.getDriver().getCurrentUrl();
-    }
-
-
+    public List<WebElement> librarianModules;
 }

@@ -24,6 +24,18 @@ public class Login {
     @FindBy(xpath = "//button[.='Sign in']")
     public WebElement signInButton;
 
+    public void loginAsStudent() {
+        emailAddressInputBox.sendKeys(ConfigurationReader.getProperty("studentUsername"));
+        passwordInputBox.sendKeys(ConfigurationReader.getProperty("studentPassword"));
+        signInButton.click();
+    }
+
+    public void loginAsLibrarian() {
+        emailAddressInputBox.sendKeys(ConfigurationReader.getProperty("librarianUsername"));
+        passwordInputBox.sendKeys(ConfigurationReader.getProperty("librarianPassword"));
+        signInButton.click();
+    }
+
     public void getEnvironment(String environment) {
         Driver.getDriver().get(ConfigurationReader.getProperty(environment));
     }
