@@ -12,6 +12,6 @@ Feature: Modules verification
   Scenario: Librarian Module Verification
     Given the librarian on the homepage
     Then the user should see following librarian modules
-      | Dashboard       |
-      | Books           |
-      | Borrowing Books |
+      | Dashboard |
+      | Users     |
+      | Books     |
