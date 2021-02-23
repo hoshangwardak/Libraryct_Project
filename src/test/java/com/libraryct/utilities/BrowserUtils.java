@@ -2,6 +2,7 @@ package com.libraryct.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -62,4 +63,17 @@ public class BrowserUtils {
         return elementsText;
 
     }
+
+    public static void libraryCtVerifyName(WebDriver driver,String expectedName) {
+        List<WebElement> allTheNames = driver.findElements(By.xpath("//tr//td[3]"));
+        for (WebElement eachName : allTheNames) {
+            if (eachName.getText().equals(expectedName)) {
+                Assert.assertTrue(eachName.getText().equals(expectedName));
+            }
+            return;
+        }
+        Assert.fail("The expected name is not in the table");
+    }
+
+
 }
