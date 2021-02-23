@@ -1,9 +1,11 @@
 package com.libraryct.pages;
 
 import com.libraryct.utilities.Driver;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -30,6 +32,28 @@ public class LibrarianLandingPage {
 
     @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
     public WebElement editUserButton;
+
+    @FindBy(xpath = "//th")
+    public List<WebElement> tablesColumns;
+
+    @FindBy(xpath = "(//select)[3]")
+    public WebElement showRecords;
+
+    @FindBy(xpath = "//select[@id='user_groups']")
+    public WebElement groupCategoriesDropDown;
+
+    @FindBy(xpath = "//select[@id='user_status']")
+    public WebElement statusDropDown;
+
+    @FindBy(xpath = "(//tr)[1]//th")
+    public List<WebElement> tableHeader;
+
+    public void getDefaultValue(int defaultValue) {
+        Select select = new Select(showRecords);
+        Assert.assertTrue("Failed, parsing not successful",Integer.parseInt(select.getFirstSelectedOption().getText()) == defaultValue);
+    }
+
+
 
 
 }

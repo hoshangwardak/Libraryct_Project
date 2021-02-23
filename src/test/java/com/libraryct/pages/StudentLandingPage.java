@@ -18,6 +18,18 @@ public class StudentLandingPage {
     @FindBy(xpath = "//span[@class='title']")
     public List<WebElement> studentsModules;
 
+    @FindBy(xpath = "(//tr)//th")
+    public List<WebElement> tableHeader;
+
+    @FindBy(xpath = "//select[@id='book_categories']")
+    public WebElement bookCategories;
+
+    @FindBy(xpath = "(//span[@class='title'])[2]")
+    public WebElement borrowingBooksLink;
+
+    @FindBy(xpath = "(//tr)[1]//th")
+    public List<WebElement> borrowingBooksTableHeader;
+
 
     public static void getCurrentUrl() {
         Driver.getDriver().getCurrentUrl();
