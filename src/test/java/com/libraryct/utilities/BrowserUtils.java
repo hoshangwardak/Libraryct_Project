@@ -47,13 +47,11 @@ public class BrowserUtils {
         for (WebElement each : webElementList) {
             webElementsAsString.add(each.getText());
         }
-
         //returning final List<String>
         return webElementsAsString;
     }
 
     public static List<String> getElementsText(By locator) {
-
         List<WebElement> elements = Driver.getDriver().findElements(locator);
         List<String> elementsText = new ArrayList<>();
 
